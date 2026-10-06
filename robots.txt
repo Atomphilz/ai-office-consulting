@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-office-consulting.de/sitemap.xml

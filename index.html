@@ -5,189 +5,415 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Philipp Konrad – AI Operating System für Ihr Büro</title>
 <meta name="description" content="Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten, in denen der Inhaber den Schreibtisch noch selbst macht.">
+<link rel="canonical" href="https://ai-office-consulting.de/">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
+<meta name="author" content="Philipp Konrad">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Philipp Konrad">
+<meta property="og:title" content="Ein AI Operating System für Ihr Büro">
+<meta property="og:description" content="Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten.">
+<meta property="og:url" content="https://ai-office-consulting.de/">
+<meta property="og:image" content="https://ai-office-consulting.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ein AI Operating System für Ihr Büro – Philipp Konrad, ai-office-consulting.de">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ein AI Operating System für Ihr Büro">
+<meta name="twitter:description" content="Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten.">
+<meta name="twitter:image" content="https://ai-office-consulting.de/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Philipp Konrad – AI Operating System für Ihr Büro",
+  "url": "https://ai-office-consulting.de/",
+  "email": "philipp.konrad@gmail.com",
+  "telephone": "+49 163 1501178",
+  "founder": { "@type": "Person", "name": "Philipp Konrad" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Köln", "addressCountry": "DE" },
+  "areaServed": "DE",
+  "priceRange": "400 € – 2.800 €",
+  "description": "Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten."
+}
+</script>
 <style>
+/* ---------- Farben und Grundwerte ---------- */
 :root {
-  --bg: #0f0f10;
-  --text: #e4e4e2;
-  --muted: #a3a3a0;
+  color-scheme: dark;
+  --bg: #0e1012;
+  --surface: #15181b;
+  --surface-2: #1b1f23;
+  --text: #e8e8e4;
+  --muted: #a4a8ac;
   --accent: #9ccfbf;
-  --rule: #2a2a2c;
+  --accent-ink: #0b1512;
+  --rule: #272b30;
+  --rule-strong: #3a4046;
   --gruen: #8fcf9a;
   --gelb: #e0c36e;
   --rot: #e08a7a;
+  --shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 10px 30px rgba(0,0,0,.25);
+  --radius: 14px;
+  --max: 68rem;
+  --prose: 40rem;
+  --gutter: 16px;
 }
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f6f6f3;
+    --surface: #ffffff;
+    --surface-2: #f0f0ec;
+    --text: #17191b;
+    --muted: #5b6168;
+    --accent: #1f6b5a;
+    --accent-ink: #ffffff;
+    --rule: #e2e2dc;
+    --rule-strong: #c9c9c2;
+    --gruen: #2f7a3e;
+    --gelb: #8a6d12;
+    --rot: #a03a2a;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px rgba(20,30,25,.06);
+  }
+}
+
+/* ---------- Basis ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 76px; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
-main {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 72px 16px 48px;
-}
-h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  font-weight: 650;
-  letter-spacing: -0.01em;
-  color: var(--accent);
-  margin: 0 0 24px;
-}
-h2 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 44px 0 10px;
-}
-p { margin: 0 0 16px; }
-p.lead { font-weight: 600; font-size: 1.1rem; line-height: 1.5; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.prose { max-width: var(--prose); }
+h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -0.015em; }
+p { margin: 0 0 1rem; }
 strong { font-weight: 600; }
-ol, ul { margin: 0 0 16px; padding-left: 22px; }
-li { margin-bottom: 10px; }
-li::marker { color: var(--muted); }
-.gruen { color: var(--gruen); }
-.gelb { color: var(--gelb); }
-.rot { color: var(--rot); }
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 8px 0 16px;
-}
-td {
-  padding: 10px 12px 10px 0;
-  border-bottom: 1px solid var(--rule);
-  vertical-align: top;
-}
-td:nth-child(2) { white-space: nowrap; padding-right: 20px; }
-td:nth-child(3) { color: var(--muted); }
-tr:last-child td { border-bottom: 1px solid var(--rule); }
 a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
-.kontakt {
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 12px; border-radius: 6px; z-index: 100; }
+.skip:focus { left: 8px; }
+
+/* ---------- Kopf ---------- */
+.kopf {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
 }
-footer {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 16px 48px;
-  color: var(--muted);
-  font-size: 0.85rem;
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; letter-spacing: -0.01em; min-height: 44px; }
+.marke svg { width: 30px; height: 30px; flex: none; }
+.nav { display: flex; gap: 4px; align-items: center; }
+.nav a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 8px; font-size: 0.95rem; line-height: 1; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:hover { color: var(--text); background: var(--surface-2); }
+.nav a.nav-cta { color: var(--accent); font-weight: 600; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 12px 22px; border-radius: 10px;
+  font-weight: 600; font-size: 1rem; line-height: 1.2; text-decoration: none;
+  border: 1px solid transparent; transition: transform .15s ease, background .15s ease, border-color .15s ease;
 }
-@media (max-width: 480px) {
-  body { font-size: 16px; }
-  main { padding-top: 48px; }
-  h1 { font-size: 1.6rem; }
-  td { display: block; padding: 2px 0; border: 0; }
-  td:first-child { padding-top: 10px; }
-  td:last-child { padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
-  td:nth-child(2) { white-space: normal; }
-  tr:last-child td { border: 0; }
-  tr:last-child td:last-child { border-bottom: 1px solid var(--rule); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-secondary { background: var(--surface); color: var(--text); border-color: var(--rule-strong); }
+.btn-secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
+.btn:hover { text-decoration: none; }
+.cta-reihe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.75rem; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 88px 0 72px; }
+.hero h1 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); font-weight: 700; letter-spacing: -0.025em; max-width: 18ch; margin-bottom: 1.25rem; }
+.hero .lead { font-size: clamp(1.15rem, 1rem + .6vw, 1.35rem); font-weight: 500; line-height: 1.45; max-width: 44rem; margin-bottom: 1.25rem; }
+.hero .einstieg { color: var(--muted); font-size: 1.1rem; max-width: 40rem; }
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding: 64px 0; border-top: 1px solid var(--rule); }
+.abschnitt h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); font-weight: 650; margin-bottom: 1.5rem; }
+.abschnitt h2::before { content: ""; display: block; width: 36px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 18px; }
+.callout {
+  margin-top: 1.5rem; padding: 18px 22px; border-left: 3px solid var(--accent);
+  background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0;
+  font-weight: 500;
 }
+.callout p { margin: 0; }
+
+/* ---------- Karten allgemein ---------- */
+.karten { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.5rem 0; }
+.karte {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 22px 22px 18px; box-shadow: var(--shadow);
+}
+.karte p:last-child { margin-bottom: 0; }
+
+/* ---------- Drei Stufen ---------- */
+.stufe { border-top: 3px solid var(--stufe); }
+.stufe .punkt { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--stufe); margin-right: 8px; vertical-align: -1px; }
+.stufe strong { color: var(--stufe); font-size: 1.1rem; display: block; margin-bottom: 6px; }
+.stufe-gruen { --stufe: var(--gruen); }
+.stufe-gelb { --stufe: var(--gelb); }
+.stufe-rot { --stufe: var(--rot); }
+
+/* ---------- Ablauf ---------- */
+.schritte { list-style: none; margin: 0; padding: 0; counter-reset: schritt; display: grid; gap: 14px; }
+.schritte li {
+  counter-increment: schritt; display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: start;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+}
+.schritte li::before {
+  content: counter(schritt, decimal-leading-zero);
+  font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--accent); letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums; padding-top: 2px;
+}
+.schritte strong { display: block; font-size: 1.15rem; margin-bottom: 4px; }
+
+/* ---------- Preise ---------- */
+.preise .karte { display: flex; flex-direction: column; gap: 6px; }
+.preise h3 { font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+.preise .preis { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 6px; font-variant-numeric: tabular-nums; }
+.preise .hinweis { color: var(--muted); margin: 0; }
+.preise .start { border-color: var(--accent); background: var(--surface); background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, var(--surface)), var(--surface)); }
+.preise .start h3 { color: var(--text); }
+.preise .start .preis { color: var(--accent); }
+.fussnoten { color: var(--muted); font-size: 0.97rem; max-width: var(--prose); }
+
+/* ---------- Voraussetzungen ---------- */
+.haken { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: var(--prose); }
+.haken li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.haken li:last-child { border-bottom: 0; }
+.haken svg { width: 22px; height: 22px; color: var(--accent); margin-top: 3px; }
+
+/* ---------- Kontakt ---------- */
+.kontakt { text-align: center; padding: 48px 24px; border: 1px solid var(--rule); background: var(--surface); border-radius: calc(var(--radius) + 4px); box-shadow: var(--shadow); margin-top: 1.5rem; }
+.kontakt p { font-size: 1.15rem; max-width: 34rem; margin: 0 auto; }
+.kontakt .name { font-weight: 600; font-size: 1rem; color: var(--muted); margin-top: 2rem; }
+.kontakt .cta-reihe { justify-content: center; margin-top: 1rem; }
+.kontakt .btn { font-variant-numeric: tabular-nums; }
+
+/* ---------- Fuss ---------- */
+.fuss { border-top: 1px solid var(--rule); padding: 28px 0 40px; color: var(--muted); font-size: 0.9rem; }
+.fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* ---------- Animation, nur wenn erlaubt ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes auf { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .hero > .wrap > * { animation: auf .6s ease-out both; }
+  .hero > .wrap > *:nth-child(2) { animation-delay: .08s; }
+  .hero > .wrap > *:nth-child(3) { animation-delay: .16s; }
+  .hero > .wrap > *:nth-child(4) { animation-delay: .24s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width: 860px) {
+  .karten { grid-template-columns: 1fr; }
+  .abschnitt { padding: 52px 0; }
+}
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  .nav a:not(.nav-cta) { display: none; }
+  .hero { padding: 56px 0 48px; }
+  .hero h1 { max-width: none; }
+  .schritte li { grid-template-columns: 48px 1fr; gap: 14px; padding: 18px; }
+  .schritte li::before { font-size: 2rem; }
+  .cta-reihe .btn { flex: 1 1 100%; }
+  .kontakt { padding: 36px 18px; }
+}
+
+/* ---------- Druck: hell, A4, eine Seite ---------- */
 @media print {
-  @page { size: A4; margin: 12mm 16mm; }
+  @page { size: A4; margin: 10mm 14mm; }
   :root {
-    --bg: #ffffff;
-    --text: #000000;
-    --muted: #333333;
-    --accent: #000000;
-    --rule: #cccccc;
-    --gruen: #2f7a3e;
-    --gelb: #8a6d12;
-    --rot: #a03a2a;
+    --bg: #fff; --surface: #fff; --surface-2: #fff; --text: #000; --muted: #333; --accent: #000; --accent-ink: #fff;
+    --rule: #cfcfcf; --rule-strong: #999; --gruen: #2f7a3e; --gelb: #8a6d12; --rot: #a03a2a; --shadow: none; --radius: 3pt;
   }
   html, body { background: #fff; color: #000; }
-  body { font-size: 9.4pt; line-height: 1.3; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  main { max-width: none; margin: 0; padding: 0; }
-  h1 { font-size: 18pt; margin: 0 0 3pt; color: #000; }
-  h2 { font-size: 11.5pt; margin: 8pt 0 2pt; color: #000; }
-  p { margin: 0 0 6pt; }
-  p.lead { font-size: 10pt; line-height: 1.3; }
-  ol, ul { margin: 0 0 7pt; padding-left: 18pt; }
-  li { margin-bottom: 3pt; }
-  li::marker { color: #000; }
-  table { margin: 4pt 0 8pt; font-size: 10pt; }
-  td { padding: 4pt 6pt 4pt 0; border-bottom: 1px solid #ddd; }
-  td:nth-child(3) { color: #000; }
+  body { font-size: 9pt; line-height: 1.28; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  * { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  .kopf, .fuss, .skip, .cta-reihe, .btn svg { display: none; }
+  .hero { padding: 0 0 4pt; }
+  .hero h1 { font-size: 17pt; margin-bottom: 3pt; max-width: none; }
+  .hero .lead { font-size: 9.8pt; line-height: 1.28; margin-bottom: 3pt; max-width: none; }
+  .hero .einstieg { font-size: 9pt; color: #000; max-width: none; margin-bottom: 0; }
+  .abschnitt { padding: 5pt 0 0; border-top: 0; }
+  .abschnitt h2 { font-size: 11pt; margin-bottom: 2pt; }
+  .abschnitt h2::before { display: none; }
+  .prose { max-width: none; }
+  p { margin: 0 0 4pt; }
+  .callout { margin-top: 1pt; padding: 0 0 0 7pt; border-left: 1.5pt solid #000; background: none; font-weight: 500; border-radius: 0; }
+  .karten { gap: 6pt; margin: 2pt 0 3pt; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .karte { padding: 3pt 6pt 4pt; border: 1px solid #cfcfcf; }
+  .stufe { border-top: 2pt solid var(--stufe); }
+  .stufe strong { font-size: 9pt; margin-bottom: 0; }
+  .stufe .punkt { width: 6pt; height: 6pt; margin-right: 3pt; }
+  .schritte { gap: 0; }
+  .schritte li { grid-template-columns: 16pt 1fr; gap: 4pt; padding: 2pt 0; border: 0; border-bottom: 1px solid #ddd; border-radius: 0; }
+  .schritte li:last-child { border-bottom: 0; }
+  .schritte li::before { font-size: 11pt; padding-top: 1pt; }
+  .schritte strong { display: inline; font-size: 9pt; margin: 0; }
+  .schritte strong::after { content: " "; }
+  .preise .karte { gap: 0; }
+  .preise h3 { font-size: 9pt; color: #000; }
+  .preise .preis { font-size: 11.5pt; margin: 0; color: #000; }
+  .preise .hinweis { font-size: 8.5pt; color: #000; }
+  .preise .start { background: none; border: 1.5px solid #000; }
+  .fussnoten { font-size: 9pt; color: #000; max-width: none; }
+  .fussnoten p { margin-bottom: 2pt; }
+  .haken { gap: 0; max-width: none; }
+  .haken li { grid-template-columns: 11pt 1fr; gap: 3pt; padding: 1pt 0; border: 0; }
+  .haken svg { width: 9pt; height: 9pt; margin-top: 1.5pt; color: #000; }
+  .kontakt { text-align: left; padding: 4pt 0 0; border: 0; border-top: 1px solid #000; border-radius: 0; margin-top: 1pt; }
+  .kontakt p { font-size: 9.5pt; max-width: none; margin: 0; }
+  .kontakt .name { margin-top: 2pt; display: inline; color: #000; font-size: 9.5pt; }
+  .kontakt .name::after { content: " · "; }
+  .kontakt .cta-reihe { display: inline; margin: 0; }
+  .kontakt .btn { display: inline; min-height: 0; padding: 0; border: 0; background: none; color: #000; font-weight: 400; font-size: 9.5pt; }
+  .kontakt .btn + .btn::before { content: " · "; }
   a { color: #000; text-decoration: none; }
-  .kontakt { margin-top: 10pt; padding-top: 6pt; border-top: 1px solid #000; font-size: 10pt; }
-  footer { display: none; }
+  .kontakt, .karten, .schritte li, .haken { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
-<main>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
 
-<h1>Ein AI Operating System für Ihr Büro</h1>
+<header class="kopf">
+  <div class="wrap">
+    <a class="marke" href="#inhalt" aria-label="Philipp Konrad, zum Seitenanfang">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--surface-2)"/><rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="var(--accent)" stroke-width="2.5"/><text x="32" y="42" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="var(--accent)" letter-spacing="-1">PK</text></svg>
+      <span>Philipp Konrad</span>
+    </a>
+    <nav class="nav" aria-label="Abschnitte">
+      <a href="#leistung">Was ich mache</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a>
+      <a class="nav-cta" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-<p class="lead">Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten, in denen der Inhaber den Schreibtisch noch selbst macht.</p>
+<main id="inhalt">
 
-<p>Sie wissen, dass KI Ihnen Arbeit abnehmen könnte. Sie wissen nur nicht, welche, und wem Sie dabei Ihre Daten anvertrauen dürfen. Beide Fragen beantworte ich an einem Tag bei Ihnen.</p>
+<section class="hero">
+  <div class="wrap">
+    <h1>Ein AI Operating System für Ihr Büro</h1>
+    <p class="lead">Ihr persönlicher digitaler Assistent, auf Ihrem Rechner, nach Ihren Regeln. Für Kanzleien, Praxen und Verwaltungen mit einem bis zehn Leuten, in denen der Inhaber den Schreibtisch noch selbst macht.</p>
+    <p class="einstieg">Sie wissen, dass KI Ihnen Arbeit abnehmen könnte. Sie wissen nur nicht, welche, und wem Sie dabei Ihre Daten anvertrauen dürfen. Beide Fragen beantworte ich an einem Tag bei Ihnen.</p>
+    <div class="cta-reihe">
+      <a class="btn btn-primary" href="mailto:philipp.konrad@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>E-Mail schreiben</a>
+      <a class="btn btn-secondary" href="tel:+491631501178"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0163 1501178</a>
+    </div>
+  </div>
+</section>
 
-<h2>Was ich mache</h2>
+<section class="abschnitt" id="leistung">
+  <div class="wrap">
+    <h2>Was ich mache</h2>
+    <div class="prose">
+      <p>Ich richte auf Ihrem eigenen Rechner ein System ein, das Ihre Mail, Ihren Kalender, Ihre Dateien und Ihre Arbeitsweise kennt: ein Second Brain für Ihr Büro. Damit baue ich die Abläufe nach, die Sie jede Woche Stunden kosten: Exporte zusammenziehen, Termine abstimmen, den Posteingang vorsortieren, Schreiben vorbereiten. Nichts davon läuft über eine fremde Plattform.</p>
+      <p>Was Sie schon haben, bleibt. Fachsoftware, Buchhaltung, Mailprogramm und Kalender werden angebunden, nicht ersetzt. Ihre Fachsoftware bleibt das System, in dem die Wahrheit steht; der Assistent arbeitet daneben und zu.</p>
+      <div class="callout"><p>Nach 90 Tagen laufen drei Abläufe von allein, und Sie haben einen Plan für die nächsten drei, die Sie auch ohne mich umsetzen können.</p></div>
+    </div>
+  </div>
+</section>
 
-<p>Ich richte auf Ihrem eigenen Rechner ein System ein, das Ihre Mail, Ihren Kalender, Ihre Dateien und Ihre Arbeitsweise kennt: ein Second Brain für Ihr Büro. Damit baue ich die Abläufe nach, die Sie jede Woche Stunden kosten: Exporte zusammenziehen, Termine abstimmen, den Posteingang vorsortieren, Schreiben vorbereiten. Nichts davon läuft über eine fremde Plattform.</p>
+<section class="abschnitt" id="stufen">
+  <div class="wrap">
+    <h2>Drei Stufen für Ihre Daten</h2>
+    <p class="prose">Zur Erstaufnahme gehört, dass wir Ihre Daten und Abläufe in ein dreistufiges System einordnen.</p>
+    <div class="karten">
+      <div class="karte stufe stufe-gruen"><strong><span class="punkt" aria-hidden="true"></span>Grün:</strong><p>Abläufe ohne Daten Dritter, die der Assistent sofort übernehmen kann.</p></div>
+      <div class="karte stufe stufe-gelb"><strong><span class="punkt" aria-hidden="true"></span>Gelb:</strong><p>Abläufe, die mit einem Umweg laufen, etwa mit Platzhaltern statt Namen.</p></div>
+      <div class="karte stufe stufe-rot"><strong><span class="punkt" aria-hidden="true"></span>Rot:</strong><p>Abläufe mit Mandanten-, Patienten- oder Mieterdaten, die in einem KI-Dienst nichts verloren haben und bei Ihnen bleiben.</p></div>
+    </div>
+    <p class="prose">So behalten Sie bei jedem Ablauf den Überblick, was der Assistent tut, was er nur mit Umweg tut und was er nicht tut, und Sie können das jedem Mandanten, Patienten oder Mieter in einem Satz erklären. Die Einstufung bekommen Sie schriftlich; sie wächst mit jedem neuen Ablauf mit.</p>
+  </div>
+</section>
 
-<p>Was Sie schon haben, bleibt. Fachsoftware, Buchhaltung, Mailprogramm und Kalender werden angebunden, nicht ersetzt. Ihre Fachsoftware bleibt das System, in dem die Wahrheit steht; der Assistent arbeitet daneben und zu.</p>
+<section class="abschnitt" id="ablauf">
+  <div class="wrap">
+    <h2>Ablauf</h2>
+    <ol class="schritte">
+      <li><div><strong>Gespräch, 30 Minuten.</strong> Sie erzählen mir Ihre Woche, ich höre zu. Kein Vertriebsgespräch. Innerhalb von 48 Stunden sage ich Ihnen, ob sich ein Tag bei Ihnen lohnt, und wenn nicht, sage ich auch das.</div></li>
+      <li><div><strong>Ein Tag bei Ihnen.</strong> Ich sitze daneben, Sie tippen. Am Abend läuft das System, und die Einstufung Ihrer Abläufe liegt schriftlich auf dem Tisch.</div></li>
+      <li><div><strong>90 Tage Begleitung.</strong> Zwei feste Termine (Tag 7 und Tag 14), Rückfragen per Mail, ein neuer Ablauf pro Monat aus Ihrer grünen Fläche. Am Ende ein schriftlicher Plan: Ist-Aufnahme, Werkzeuge, Reihenfolge, Kostenrahmen für alles, was danach kommt.</div></li>
+    </ol>
+  </div>
+</section>
 
-<p>Nach 90 Tagen laufen drei Abläufe von allein, und Sie haben einen Plan für die nächsten drei, den Sie auch ohne mich umsetzen können.</p>
+<section class="abschnitt" id="preise">
+  <div class="wrap">
+    <h2>Preise</h2>
+    <p class="prose">Fester Preis, klarer Umfang.</p>
+    <div class="karten preise">
+      <div class="karte start"><h3>Startpaket, 90 Tage</h3><p class="preis">2.800 €</p><p class="hinweis">Tag bei Ihnen plus drei Monate Begleitung</p></div>
+      <div class="karte"><h3>Tag bei Ihnen, einzeln</h3><p class="preis">1.800 €</p><p class="hinweis">mit Einstufung und schriftlichem Plan</p></div>
+      <div class="karte"><h3>Begleitung, je weiterer Monat</h3><p class="preis">400 €</p><p class="hinweis">nach den 90 Tagen, monatlich kündbar</p></div>
+    </div>
+    <div class="fussnoten">
+      <p>Zuzüglich 19 % Umsatzsteuer. Der Tag wird bei Buchung bezahlt, die Begleitung monatlich im Voraus.</p>
+      <p>Den ersten drei Kunden erlasse ich 300 € und bitte im Gegenzug darum, ihren Fall anonymisiert als Beispiel zeigen zu dürfen.</p>
+    </div>
+  </div>
+</section>
 
-<h2>Drei Stufen für Ihre Daten</h2>
+<section class="abschnitt" id="voraussetzungen">
+  <div class="wrap">
+    <h2>Voraussetzungen</h2>
+    <ul class="haken">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg><span>Ein Mac (macOS 13 oder neuer). Windows auf Anfrage.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg><span>Ein Claude-Abo auf Ihren Namen, 20 bis 100 € im Monat.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg><span>Google Workspace ist ideal. Outlook geht mit Einschränkungen.</span></li>
+    </ul>
+  </div>
+</section>
 
-<p>Zur Erstaufnahme gehört, dass wir Ihre Daten und Abläufe in ein dreistufiges System einordnen. <strong class="gruen">Grün:</strong> Abläufe ohne Daten Dritter, die der Assistent sofort übernehmen kann. <strong class="gelb">Gelb:</strong> Abläufe, die mit einem Umweg laufen, etwa mit Platzhaltern statt Namen. <strong class="rot">Rot:</strong> Abläufe mit Mandanten-, Patienten- oder Mieterdaten, die in einem KI-Dienst nichts verloren haben und bei Ihnen bleiben. So behalten Sie bei jedem Ablauf den Überblick, was der Assistent tut, was er nur mit Umweg tut und was er nicht tut, und Sie können das jedem Mandanten, Patienten oder Mieter in einem Satz erklären. Die Einstufung bekommen Sie schriftlich; sie wächst mit jedem neuen Ablauf mit.</p>
+<section class="abschnitt" id="kontakt">
+  <div class="wrap">
+    <h2>Nächster Schritt</h2>
+    <div class="kontakt">
+      <p>Schreiben Sie mir zwei Zeilen zu Ihrer Woche, oder rufen Sie an.</p>
+      <p class="name">Philipp Konrad</p>
+      <div class="cta-reihe">
+        <a class="btn btn-primary" href="mailto:philipp.konrad@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>philipp.konrad@gmail.com</a>
+        <a class="btn btn-secondary" href="tel:+491631501178"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0163 1501178</a>
+      </div>
+    </div>
+    <!-- Referenzen: folgt nach dem ersten Fall -->
+  </div>
+</section>
 
-<h2>Ablauf</h2>
-
-<ol>
-<li><strong>Gespräch, 30 Minuten.</strong> Sie erzählen mir Ihre Woche, ich höre zu. Kein Vertriebsgespräch. Innerhalb von 48 Stunden sage ich Ihnen, ob sich ein Tag bei Ihnen lohnt, und wenn nicht, sage ich auch das.</li>
-<li><strong>Ein Tag bei Ihnen.</strong> Ich sitze daneben, Sie tippen. Am Abend läuft das System, und die Einstufung Ihrer Abläufe liegt schriftlich auf dem Tisch.</li>
-<li><strong>90 Tage Begleitung.</strong> Zwei feste Termine (Tag 7 und Tag 14), Rückfragen per Mail, ein neuer Ablauf pro Monat aus Ihrer grünen Fläche. Am Ende ein schriftlicher Plan: Ist-Aufnahme, Werkzeuge, Reihenfolge, Kostenrahmen für alles, was danach kommt.</li>
-</ol>
-
-<h2>Preise</h2>
-
-<p>Fester Preis, klarer Umfang.</p>
-
-<table>
-<tbody>
-<tr><td><strong>Startpaket, 90 Tage</strong></td><td><strong>2.800 €</strong></td><td>Tag bei Ihnen plus drei Monate Begleitung</td></tr>
-<tr><td>Tag bei Ihnen, einzeln</td><td>1.800 €</td><td>mit Einstufung und schriftlichem Plan</td></tr>
-<tr><td>Begleitung, je weiterer Monat</td><td>400 €</td><td>nach den 90 Tagen, monatlich kündbar</td></tr>
-</tbody>
-</table>
-
-<p>Zuzüglich 19 % Umsatzsteuer. Der Tag wird bei Buchung bezahlt, die Begleitung monatlich im Voraus.</p>
-
-<p>Den ersten drei Kunden erlasse ich 300 € und bitte im Gegenzug darum, ihren Fall anonymisiert als Beispiel zeigen zu dürfen.</p>
-
-<h2>Voraussetzungen</h2>
-
-<ul>
-<li>Ein Mac (macOS 13 oder neuer). Windows auf Anfrage.</li>
-<li>Ein Claude-Abo auf Ihren Namen, 20 bis 100 € im Monat.</li>
-<li>Google Workspace ist ideal. Outlook geht mit Einschränkungen.</li>
-</ul>
-
-<h2>Nächster Schritt</h2>
-
-<p>Schreiben Sie mir zwei Zeilen zu Ihrer Woche, oder rufen Sie an.</p>
-
-<p class="kontakt">Philipp Konrad · <a href="mailto:philipp.konrad@gmail.com">philipp.konrad@gmail.com</a> · <a href="tel:+491631501178">0163 1501178</a></p>
-
-<!-- Referenzen: folgt nach dem ersten Fall -->
 </main>
-<footer>
-<!-- Impressum: folgt -->
+
+<footer class="fuss">
+  <div class="wrap">
+    <span>Philipp Konrad · 2026</span>
+    <span>ai-office-consulting.de</span>
+    <!-- Impressum: folgt, hängt an der Rechnungsentität -->
+    <!-- Datenschutz: folgt -->
+  </div>
 </footer>
 </body>
 </html>
