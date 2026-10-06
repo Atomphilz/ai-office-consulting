@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+<head>
+<title>Impressum – Philipp Konrad</title>
+<meta name="description" content="Anbieterkennzeichnung für ai-office-consulting.de.">
+<link rel="canonical" href="https://ai-office-consulting.de/impressum.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
+<meta name="author" content="Philipp Konrad">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0e1012; --surface: #15181b; --surface-2: #1b1f23;
+  --text: #e8e8e4; --muted: #a4a8ac; --accent: #9ccfbf; --accent-ink: #0b1512;
+  --rule: #272b30; --rule-strong: #3a4046;
+  --max: 68rem; --prose: 40rem; --gutter: 16px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f6f6f3; --surface: #ffffff; --surface-2: #f0f0ec;
+    --text: #17191b; --muted: #5b6168; --accent: #1f6b5a; --accent-ink: #ffffff;
+    --rule: #e2e2dc; --rule-strong: #c9c9c2;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.prose { max-width: var(--prose); }
+h1, h2 { margin: 0; line-height: 1.2; letter-spacing: -0.015em; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 12px; border-radius: 6px; z-index: 100; }
+.skip:focus { left: 8px; }
+.kopf { position: sticky; top: 0; z-index: 10; background: var(--bg); background: color-mix(in srgb, var(--bg) 85%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; letter-spacing: -0.01em; min-height: 44px; }
+.marke svg { width: 30px; height: 30px; flex: none; }
+.nav a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 8px; font-size: 0.95rem; line-height: 1; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:hover { color: var(--text); background: var(--surface-2); }
+.seite { padding: 64px 0 72px; }
+.seite h1 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.75rem; }
+.seite .einstieg { color: var(--muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+.abschnitt { padding: 28px 0 8px; border-top: 1px solid var(--rule); }
+.abschnitt:first-of-type { border-top: 0; padding-top: 0; }
+.abschnitt h2 { font-size: 1.25rem; font-weight: 650; margin-bottom: 0.9rem; }
+.abschnitt h2::before { content: ""; display: block; width: 36px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 14px; }
+address { font-style: normal; margin: 0 0 1rem; }
+ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+li { margin-bottom: 0.35rem; }
+.stand { color: var(--muted); font-size: 0.95rem; margin-top: 2rem; }
+.fuss { border-top: 1px solid var(--rule); padding: 28px 0 40px; color: var(--muted); font-size: 0.9rem; }
+.fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.fuss a { color: var(--muted); }
+.fuss a[aria-current] { color: var(--text); text-decoration: none; }
+@media print {
+  @page { size: A4; margin: 14mm; }
+  :root { --bg: #fff; --surface: #fff; --surface-2: #fff; --text: #000; --muted: #333; --accent: #000; --accent-ink: #fff; --rule: #cfcfcf; --rule-strong: #999; }
+  html, body { background: #fff; color: #000; }
+  body { font-size: 10pt; line-height: 1.35; }
+  .kopf, .fuss, .skip { display: none; }
+  .wrap { max-width: none; padding: 0; }
+  .seite { padding: 0; }
+  .prose { max-width: none; }
+  a { color: #000; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf">
+  <div class="wrap">
+    <a class="marke" href="/" aria-label="Philipp Konrad, zur Startseite">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="var(--surface-2)"/><rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="var(--accent)" stroke-width="2.5"/><text x="32" y="42" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="var(--accent)" letter-spacing="-1">PK</text></svg>
+      <span>Philipp Konrad</span>
+    </a>
+    <nav class="nav" aria-label="Zurück">
+      <a href="/">Zur Startseite</a>
+    </nav>
+  </div>
+</header>
+<main id="inhalt" class="seite">
+  <div class="wrap prose">
+    <h1>Impressum</h1>
+    <p class="einstieg">Angaben gemäß § 5 DDG.</p>
+
+    <section class="abschnitt">
+      <h2>Anbieter</h2>
+      <address>
+        AI Office Consulting<br>
+        Philipp Konrad<br>
+        Ebereschenweg 23<br>
+        50767 Köln<br>
+        Deutschland
+      </address>
+    </section>
+
+    <section class="abschnitt">
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href="tel:+491631501178">0163 1501178</a><br>
+        E-Mail: <a href="mailto:philipp.konrad@gmail.com">philipp.konrad@gmail.com</a>
+      </p>
+    </section>
+
+    <section class="abschnitt">
+      <h2>Umsatzsteuer</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>DE347146556</p>
+    </section>
+
+    <section class="abschnitt">
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>Philipp Konrad, Anschrift wie oben.</p>
+    </section>
+
+    <section class="abschnitt">
+      <h2>Streitbeilegung</h2>
+      <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </section>
+
+    <p class="stand">Stand: Oktober 2026</p>
+  </div>
+</main>
+<footer class="fuss">
+  <div class="wrap">
+    <span>Philipp Konrad · 2026</span>
+    <span><a href="/impressum.html" aria-current="page">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+</body>
+</html>
