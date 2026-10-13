@@ -124,8 +124,45 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   <div class="wrap">
     <h1>Skills für Claude Code</h1>
     <p class="einstieg">Was sich im Alltag mit Claude Code bewährt hat, zum Mitnehmen. Jede Karte: was der Skill tut, warum er sich lohnt, was im Paket ist, und ein Prompt, mit dem Claude ihn im eigenen Projekt installiert und anpasst. Unverlinkt, nur für Leute mit dem Link.</p>
-    <ul class="inhalt" aria-label="Skills auf dieser Seite"><li><a href="#zwischenstand">/zwischenstand</a></li></ul>
+    <ul class="inhalt" aria-label="Skills auf dieser Seite"><li><a href="#tagesritual">/day-close + /day-open</a></li><li><a href="#zwischenstand">/zwischenstand</a></li></ul>
     
+<article class="skill" id="tagesritual">
+  <div class="skill-kopf">
+    <h2>/day-close + /day-open</h2>
+    <p class="meta"><span>Philipp Konrad</span><span>Stand 2026-10-13</span><span>Braucht: Claude Code, ein Git-Repo als Projekt; optional ein Kalender-CLI</span></p>
+  </div>
+  <p class="kurz">Ein Tagesritual in zwei ungleichen Hälften. Abends fünf Minuten planen, morgens sechzig Sekunden vorlesen. Ein Einmal-Interview legt fest, was abgefragt und geprüft wird.</p>
+  <div class="aktionen">
+    <a class="btn btn-primary" href="tagesritual.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Zip laden (12 KB)</a>
+    <a class="btn btn-secondary" href="https://github.com/Atomphilz/ai-office-consulting/tree/main/skills/tagesritual"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>Dateien auf GitHub</a>
+  </div>
+  <div class="spalten">
+    <div class="block"><h3>Was es tut</h3><p>Wer mehrere Bereiche alleine fährt, hat meist keinen Tagesplan: Aufgaben kommen in Ankunftsreihenfolge dran oder werden vertagt, bis sie vergessen sind. Das Paar ist die Gegenmaßnahme, als Ritual, nicht als Automation.</p>
+<p><strong><code>/day-close</code>, abends, ~5 Minuten.</strong> Fragt, was heute wirklich passiert ist, fängt ein, was sonst nirgends steht (Bargeld, Zusagen am Telefon, was einem noch im Kopf sitzt), schlägt zwei bis drei Fokus-Kandidaten für morgen vor, und man wählt. Schreibt den Rückblick in die heutige Tagesdatei und den Plan für morgen in eine neue. Legt Kalenderblöcke an, wenn ein Kalender-Werkzeug konfiguriert ist.</p>
+<p><strong><code>/day-open</code>, morgens, 60 Sekunden.</strong> Liest den Plan vor, prüft die konfigurierten Quellen (Kalender, Postfach, Logs) und meldet nur, was den Plan bricht. Fehlt der Abend, schreibt es selbst einen kalten Brief und erwähnt die Lücke nie.</p>
+<p><strong><code>/day-setup</code>, einmal.</strong> Sieben Fragen, gebündelt: wer bist du, welche Bereiche, was abends erfassen, was morgens prüfen, welche Werkzeuge, welche Spannungen beim Planen benennen, was nie ins Ritual gehört. Schreibt <code>references/tagesritual.md</code>, lesbar und per Hand änderbar. Die beiden Tagesskills kennen keinen Namen, keinen Bereich, kein Werkzeug; alles Persönliche steht in dieser Datei.</p></div>
+    <div class="block"><h3>Key Benefits</h3><ul><li><strong>Überlebt schlechte Tage.</strong> Die Teilung ist absichtlich ungleich: eine schwere und eine triviale Hälfte. Zwei schwere tägliche Rituale sterben nach einer Woche.</li><li><strong>Fängt, was kein System sieht.</strong> Bargeld, Telefonzusagen, Chat-Versprechen existieren nur im Kopf, bis sie abends in die Tagesdatei kommen.</li><li><strong>Kein Tadel, kein Zählen.</strong> Ein ausgelassener Abend wird nicht erwähnt. Der Morgen stellt die Kette einfach wieder her.</li><li><strong>Spannungen werden benannt, nicht wegdiskutiert.</strong> Wenn zwei Dinge um dieselben Stunden konkurrieren, sagt der Abend laut, was das andere verliert, statt einen Plan zu zeigen, in dem alles passt.</li><li><strong>Drift wird sichtbar.</strong> Jede Tagesdatei trägt Plan und ehrlichen Rückblick. Eine Woche nebeneinander gelesen zeigt, was wirklich passiert.</li><li><strong>Inhalt ist deiner, Mechanik ist fest.</strong> Was gefragt wird, steht in einer Datei, die du änderst. Wie das Ritual läuft, steht in den Skills und bleibt.</li></ul></div>
+    <div class="block"><h3>Im Paket</h3><ul><li><code>day-setup/SKILL.md</code>: das Einmal-Interview, schreibt <code>references/tagesritual.md</code>.</li><li><code>day-close/SKILL.md</code>: der Abend. Vier Schritte: Rückblick, Einfangen, Morgen entscheiden, schreiben und blocken.</li><li><code>day-open/SKILL.md</code>: der Morgen. Zwei Pfade: Plan vorhanden, oder kalter Brief.</li><li><code>daily-template.md</code>: die Vorlage der Tagesdatei, von beiden Skills benutzt, mit Platzhaltern aus der Konfiguration.</li></ul></div>
+    <div class="block"><h3>Hinweise</h3><ul><li>Ohne Kalender-Werkzeug lebt der Plan nur in der Tagesdatei; <code>/day-close</code> legt dann keine Blöcke an und erwähnt den Kalender nicht.</li><li>Die Skills sind englisch geschrieben, das Interview und die Konfiguration deutsch. Die Sprache des Gesprächs und der Tagesdatei legt <code>/day-setup</code> fest.</li><li>Die Datumswerte im Kopf der Skills kommen aus <code>date -v+1d</code> (macOS). Unter Linux <code>date -d '+1 day'</code> einsetzen.</li><li>Die Konfigurationsdatei ist Markdown mit festen Überschriften. Inhalt frei ändern, Überschriften nicht umbenennen: die Skills suchen sie wörtlich.</li></ul></div>
+    <div class="block breit"><h3>Einbindung in den eigenen Claude Code</h3><p>Ordner entpacken, in Claude Code den Pfad einsetzen und diesen Prompt schicken:</p>
+<div class="code"><button class="kopieren" type="button">Kopieren</button><pre><code>Ich habe den Ordner "tagesritual" aus dem Zip nach &lt;PFAD&gt; entpackt.
+Lies zuerst day-setup/SKILL.md, day-close/SKILL.md, day-open/SKILL.md
+und daily-template.md. Dann installiere das Paket in dieses Projekt:
+
+1. die drei Skill-Ordner nach .claude/skills/day-setup/, .claude/skills/day-close/
+   und .claude/skills/day-open/ (je die SKILL.md)
+2. daily-template.md nach references/daily-template.md
+3. die Ordner references/ und daily/ anlegen, falls es sie nicht gibt
+
+Ändere an den Skills und der Vorlage nichts: sie enthalten keine Namen,
+Bereiche oder Werkzeuge, das kommt alles aus references/tagesritual.md,
+die /day-setup gleich mit mir schreibt. Starte danach /day-setup und
+führe das Interview mit mir.
+
+Am Ende sag mir, wie es weitergeht: heute Abend /day-close, morgen früh
+/day-open.</code></pre></div></div>
+  </div>
+</article>
 <article class="skill" id="zwischenstand">
   <div class="skill-kopf">
     <h2>/zwischenstand</h2>
