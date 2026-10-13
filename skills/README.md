@@ -28,7 +28,7 @@ Seite: https://ai-office-consulting.de/skills/ (unverlinkt, `noindex`, nur für 
    Markdown reicht: Absätze, `- ` Listen, Codeblöcke, `Code`, **fett**, Links. Abschnitte, die leer bleiben, weglassen.
 
 4. Bauen: `python3 skills/bauen.py` aus dem Repo-Wurzelverzeichnis. Schreibt `skills/index.html` und `skills/<name>.zip` neu. Beides mit einchecken.
-5. Branch, Commit, Pull Request. Nach dem Merge ist die Seite in etwa einer Minute live.
+5. Commit und `git push` direkt auf `main`. Die Seite ist etwa eine Minute später live.
 
 Tipp: Claude Code kann die `karte.md` aus einer `SKILL.md` vorschreiben. Prompt: „Lies `skills/zwischenstand/karte.md` als Muster und schreib eine `karte.md` für den Skill in `<Ordner>`. Den Einbindungs-Prompt so, dass ein fremder Claude Code den Skill ohne Rückfrage installiert."
 
