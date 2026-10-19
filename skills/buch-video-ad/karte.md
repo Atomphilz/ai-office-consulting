@@ -48,3 +48,4 @@ Kopie von Teil A aus prompt.md.
 - Die ausführlichen Amazon-Ads-Richtlinien sind nur eingeloggt lesbar. Was Claude per Web-Recherche nicht belegen kann, steht als offener Punkt in der README; ob Expertenzitate oder Sterne im Video erlaubt sind, prüfst du selbst im Ads-Konto.
 - Bauen und Schalten sind zwei Entscheidungen. Läuft am Buch gerade ein anderer Test (Klappentext, Preis), lieber warten, sonst ist der Effekt nicht lesbar.
 - Voice-over über ElevenLabs ist optional. Der API-Key gehört in eine `.env`, nie in den Prompt.
+- Allgemeine Fassung für Apps, Kurse, Produkte und Dienstleistungen: `/video-ad` auf dieser Seite. Diese Karte ist die Buchfassung mit Klappentext, Cover als 3D-Buch und Amazon-Ads-Regeln.
