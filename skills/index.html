@@ -124,8 +124,35 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   <div class="wrap">
     <h1>Skills für Claude Code</h1>
     <p class="einstieg">Was sich im Alltag mit Claude Code bewährt hat, zum Mitnehmen. Jede Karte: was der Skill tut, warum er sich lohnt, was im Paket ist, und ein Prompt, mit dem Claude ihn im eigenen Projekt installiert und anpasst. Unverlinkt, nur für Leute mit dem Link.</p>
-    <ul class="inhalt" aria-label="Skills auf dieser Seite"><li><a href="#tagesritual">/day-close + /day-open</a></li><li><a href="#zwischenstand">/zwischenstand</a></li></ul>
+    <ul class="inhalt" aria-label="Skills auf dieser Seite"><li><a href="#buch-video-ad">/buch-video-ad</a></li><li><a href="#tagesritual">/day-close + /day-open</a></li><li><a href="#zwischenstand">/zwischenstand</a></li></ul>
     
+<article class="skill" id="buch-video-ad">
+  <div class="skill-kopf">
+    <h2>/buch-video-ad</h2>
+    <p class="meta"><span>Fabian Gless</span><span>Stand 2026-10-19</span><span>Braucht: Claude Code, Internet; bun und ffmpeg installiert Claude bei Bedarf mit</span></p>
+  </div>
+  <p class="kurz">Ein Formular ausfüllen, Claude Code baut daraus eine fertige Amazon-Videoanzeige für ein Buch. Motion Graphics mit Remotion, zwei Hook-Varianten für den A/B-Test, ohne Ton verständlich, nichts erfunden.</p>
+  <div class="aktionen">
+    <a class="btn btn-primary" href="buch-video-ad.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Zip laden (7 KB)</a>
+    <a class="btn btn-secondary" href="https://github.com/Atomphilz/ai-office-consulting/tree/main/skills/buch-video-ad"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>Dateien auf GitHub</a>
+  </div>
+  <div class="spalten">
+    <div class="block"><h3>Was es tut</h3><p>Amazon spielt Videoanzeigen meist stumm ab, und die ersten anderthalb Sekunden entscheiden. Ein Motion-Graphics-Video nach Agenturart kostet Geld oder Tage in After Effects. Der Skill macht daraus einen Nachmittag in Claude Code.</p>
+<p>Du füllst Teil A des Prompts aus: Buch, Zielgruppe, echte Belege (Sterne, Rang, Zitate), Format, Stil. Claude recherchiert die aktuellen Amazon-Ads-Vorgaben für den Anzeigentyp, schlägt drei Hooks vor, zeigt dir den Szenenplan als Tabelle und wartet auf dein Okay. Dann baut es das Video mit Remotion: Cover als 3D-Buch, Kinetic Type, Stempel und Sticker für Belege, Schlusskarte mit Handlungsaufforderung. Vor dem finalen Render prüft es sich selbst über einen Kontaktbogen mit markierter Randzone und zeigt dir die Vorschau. Ergebnis: je Hook und Format eine MP4 plus eine README mit Quellen und offenen Punkten.</p>
+<p>Am 19. Oktober 2026 so für „Die Kraft deines Zyklus" gebaut: 26 Sekunden, 1920×1080, zwei Hooks, ein Nachmittag.</p></div>
+    <div class="block"><h3>Key Benefits</h3><ul><li><strong>Nichts erfinden.</strong> Bewertungen, Ränge, Zitate und Zahlen kommen nur aus deinem Formular. Fehlt etwas, bleibt es weg. Jede Zahl im Video trägt eine Quellenzeile.</li><li><strong>A/B-Test eingebaut.</strong> Zwei Hooks, derselbe Rest. Der Test zeigt sauber, welcher Einstieg zieht.</li><li><strong>Eine Datei steuert alles.</strong> Texte, Timing, Szenen stehen in <code>src/script.ts</code>. Ein Satz geändert, neu gerendert, fertig. Optionale Szenen haben einen Schalter, falls Amazon eine Szene ablehnt.</li><li><strong>Zwei Freigaben, kein Blindflug.</strong> Vor dem Bauen den Szenenplan, vor dem Render die Vorschau. Audio erst nach dem ersten Okay, weil es Credits kostet.</li><li><strong>Eine Bühne, alle Formate.</strong> 16:9, 1:1 und 9:16 aus demselben Layout, mit sicherer Zone für Plattform-UI.</li></ul></div>
+    <div class="block"><h3>Im Paket</h3><ul><li><code>SKILL.md</code>: der Einstieg. Sammelt Teil A ein (aus Datei, aus dem Projekt oder im Interview) und hält die Reihenfolge von Teil B ein.</li><li><code>prompt.md</code>: Fabians Prompt in voller Länge. Teil A ist das Formular, Teil B der Auftrag an Claude mit Grundsätzen, sechs Schritten und Prüfliste. Funktioniert auch ohne Skill: ausfüllen, komplett in Claude Code kopieren.</li></ul></div>
+    <div class="block"><h3>Hinweise</h3><ul><li>Das Remotion-Projekt gehört in einen eigenen leeren Ordner, nicht ins Textrepo: <code>node_modules</code> und Renderdateien sind groß.</li><li>Die ausführlichen Amazon-Ads-Richtlinien sind nur eingeloggt lesbar. Was Claude per Web-Recherche nicht belegen kann, steht als offener Punkt in der README; ob Expertenzitate oder Sterne im Video erlaubt sind, prüfst du selbst im Ads-Konto.</li><li>Bauen und Schalten sind zwei Entscheidungen. Läuft am Buch gerade ein anderer Test (Klappentext, Preis), lieber warten, sonst ist der Effekt nicht lesbar.</li><li>Voice-over über ElevenLabs ist optional. Der API-Key gehört in eine <code>.env</code>, nie in den Prompt.</li></ul></div>
+    <div class="block breit"><h3>Einbindung in den eigenen Claude Code</h3><p>Ordner entpacken, in Claude Code den Pfad einsetzen und diesen Prompt schicken:</p>
+<div class="code"><button class="kopieren" type="button">Kopieren</button><pre><code>Ich habe den Ordner "buch-video-ad" aus dem Zip nach &lt;PFAD&gt; entpackt.
+Lies zuerst SKILL.md und prompt.md. Dann installiere den Skill in dieses
+Projekt: beide Dateien nach .claude/skills/buch-video-ad/, unverändert.
+
+Sag mir danach, wie ich ihn starte: /buch-video-ad in einem Projekt, in
+dem Cover und Klappentext des Buchs liegen, oder mit einer ausgefüllten
+Kopie von Teil A aus prompt.md.</code></pre></div></div>
+  </div>
+</article>
 <article class="skill" id="tagesritual">
   <div class="skill-kopf">
     <h2>/day-close + /day-open</h2>
@@ -207,7 +234,7 @@ teste: eine Session mit /zwischenstand beenden, /clear tippen, die
 </main>
 <footer class="fuss">
   <div class="wrap">
-    <span>Philipp Konrad · 2026 · Stand 2026-10-13</span>
+    <span>Philipp Konrad · 2026 · Stand 2026-10-19</span>
     <span><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
