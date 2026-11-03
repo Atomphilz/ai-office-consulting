@@ -354,7 +354,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
       <h1>Hallo Sabina: dein AI Operating System in sieben Schritten</h1>
       <p class="lead">Vom leeren Rechner zum laufenden Assistenten. Du tippst, ich sitze daneben. Diese Seite ist der rote Faden für Mittwoch, den 4. November, und danach dein Nachschlagewerk.</p>
       <ul class="fakten">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Etwa eine Stunde für die Installation. Danach bauen wir die Belegablage für deine Steuerberaterin.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Gut eine Stunde für die Installation, mit Pausen anderthalb. Danach bauen wir die Belegablage für deine Steuerberaterin.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Dein Windows-Rechner. Du brauchst Administratorrechte; auf einem eigenen PC hast du sie.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Alles läuft auf deinem Rechner. Deine Dateien bleiben bei dir, ich sehe keine Passwörter.</span></li>
       </ul>
@@ -400,12 +400,13 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
   <div class="wrap">
     <h2><span class="nr">03</span>Die sieben Schritte</h2>
     <p class="prose">In dieser Reihenfolge. Jeder Schritt endet mit einer Prüfung, an der du siehst, dass er geklappt hat.</p>
+    <p class="prose">Du musst vorher keinen Ordner anlegen. Die Programme aus den Schritten 1 bis 3 installieren sich an ihren Standardort; dein AIOS-Ordner <code>Dokumente/aiOS</code> entsteht in Schritt 5 beim Entpacken des Kits.</p>
     <ol class="schritte">
 
       <li class="schritt">
         <h3>Git installieren</h3>
-        <span class="dauer">5 Minuten</span>
-        <p class="nur-win">Git bringt die Kommandozeile „Git Bash“ mit, die Claude Code unter Windows braucht. Installer laden, starten, alle Voreinstellungen so lassen und durchklicken.</p>
+        <span class="dauer">10 Minuten</span>
+        <p class="nur-win">Git ist ein Werkzeug für Programmierer, das wir selbst nicht benutzen. Es bringt aber die Kommandozeile „Git Bash“ mit, über die Claude Code unter Windows seine Befehle ausführt; ohne sie startet Claude Code nicht. Installer laden, starten, alle Voreinstellungen so lassen und durchklicken.</p>
         <p class="nur-mac">Auf dem Mac ist Git schon dabei, es muss nur einmal freigeschaltet werden. Terminal öffnen (Spotlight: <code>Terminal</code>) und den Befehl ausführen; ein Fenster fragt nach der Installation der Befehlszeilenwerkzeuge.</p>
         <div class="aktionen nur-win"><a class="btn btn-primary" href="https://git-scm.com/download/win" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Git for Windows laden</a></div>
         <div class="code nur-mac"><span class="wo">Terminal</span><button class="kopieren" type="button">Kopieren</button><pre><code>xcode-select --install</code></pre></div>
@@ -414,17 +415,17 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
       <li class="schritt">
         <h3>VS Code installieren</h3>
-        <span class="dauer">5 Minuten</span>
-        <p>VS Code ist das Fenster, in dem du mit dem Assistenten arbeitest: links die Dateien, rechts das Gespräch. Installer laden, starten, Voreinstellungen lassen.</p>
+        <span class="dauer">10 Minuten</span>
+        <p>VS Code ist das Fenster, in dem du mit dem Assistenten arbeitest: links die Dateien, rechts das Gespräch. Installer laden, starten, Voreinstellungen lassen. Einzige Ausnahme: das Häkchen „Desktop-Symbol erstellen“ setzen, dann findest du das Fenster jeden Tag sofort. Fragt VS Code beim Start nach „GitHub Copilot“ (zum Beispiel „How would you like to set up the copilot command?“): <strong>Don’t add the copilot command</strong> wählen. Auch eine Anmeldung bei GitHub ablehnen. Copilot ist ein anderer Assistent, den wir nicht brauchen.</p>
         <div class="aktionen"><a class="btn btn-primary" href="https://code.visualstudio.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>VS Code laden</a></div>
-        <p class="fertig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Fertig, wenn VS Code startet. Sprache auf Deutsch umstellen ist möglich, aber nicht nötig.</span></p>
+        <p class="fertig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Fertig, wenn VS Code startet. Die Oberfläche ist englisch, das bleibt so; die Anleitung nennt die englischen Menünamen.</span></p>
       </li>
 
       <li class="schritt">
         <h3>Claude Code installieren</h3>
-        <span class="dauer">5 Minuten</span>
-        <p class="nur-win">PowerShell öffnen (Startmenü, <code>PowerShell</code> tippen) und den Befehl einfügen. Danach in VS Code die Erweiterung „Claude Code“ installieren: links das Erweiterungen-Symbol, „Claude Code“ suchen, Installieren.</p>
-        <p class="nur-mac">Terminal öffnen und den Befehl einfügen. Danach in VS Code die Erweiterung „Claude Code“ installieren: links das Erweiterungen-Symbol, „Claude Code“ suchen, Installieren.</p>
+        <span class="dauer">10 Minuten</span>
+        <p class="nur-win">PowerShell öffnen (Startmenü, <code>PowerShell</code> tippen; „Windows PowerShell“ nehmen, nicht die Variante mit „(x86)“) und den Befehl einfügen. Den blauen Hinweis „Install the latest PowerShell“ ignorieren, die vorhandene Version reicht. Danach in VS Code die Erweiterung „Claude Code“ installieren: links das Symbol „Extensions“ (vier Quadrate), „Claude Code“ suchen, <strong>Install</strong>.</p>
+        <p class="nur-mac">Terminal öffnen und den Befehl einfügen. Danach in VS Code die Erweiterung „Claude Code“ installieren: links das Symbol „Extensions“ (vier Quadrate), „Claude Code“ suchen, <strong>Install</strong>.</p>
         <div class="code nur-win"><span class="wo">PowerShell</span><button class="kopieren" type="button">Kopieren</button><pre><code>irm https://claude.ai/install.ps1 | iex</code></pre></div>
         <div class="code nur-mac"><span class="wo">Terminal</span><button class="kopieren" type="button">Kopieren</button><pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></div>
         <div class="aktionen"><a class="btn btn-secondary" href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" rel="noopener">Erweiterung im Marketplace</a><a class="btn btn-secondary" href="https://docs.claude.com/en/docs/claude-code/setup" target="_blank" rel="noopener">Offizielle Installationsanleitung</a></div>
@@ -433,10 +434,9 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
       <li class="schritt">
         <h3>Anmelden</h3>
-        <span class="dauer">3 Minuten</span>
-        <p>Im Terminal <code>claude</code> eingeben. Beim ersten Start öffnet sich der Browser; dort mit deinem Claude-Konto anmelden und bestätigen. Zurück im Terminal erscheint die Eingabezeile.</p>
-        <div class="code"><span class="wo">Terminal</span><button class="kopieren" type="button">Kopieren</button><pre><code>claude</code></pre></div>
-        <p class="fertig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Fertig, wenn Claude auf „Hallo“ antwortet. Mit <code>/exit</code> wieder raus.</span></p>
+        <span class="dauer">10 Minuten</span>
+        <p>In VS Code links das Claude-Symbol anklicken (die Einführungstour „Get Started with Claude“ kannst du schließen). Im Chatfenster auf <strong>Log in</strong> klicken; der Browser öffnet sich, dort mit deinem Claude-Konto anmelden und bestätigen. Zurück in VS Code steht das Chatfenster bereit. Scheint nichts zu passieren: Das Browserfenster mit der Anmeldung öffnet sich manchmal hinter VS Code; in der Taskleiste auf das Browser-Symbol klicken.</p>
+        <p class="fertig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Fertig, wenn Claude im Chatfenster auf „Hallo“ antwortet.</span></p>
       </li>
 
       <li class="schritt">
@@ -449,8 +449,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
       <li class="schritt">
         <h3>Ordner öffnen und <code>/onboard</code></h3>
-        <span class="dauer">20 Minuten</span>
-        <p>In VS Code: <strong>Datei → Ordner öffnen</strong>, den Ordner <code>aiOS</code> wählen, „Ja, ich vertraue den Autoren“. Dann das Claude-Symbol in der linken Leiste anklicken. Im Gespräch eingeben:</p>
+        <span class="dauer">25 Minuten</span>
+        <p>In VS Code: <strong>File → Open Folder</strong> (Datei → Ordner öffnen), den Ordner <code>aiOS</code> wählen, „Yes, I trust the authors“. Dann das Claude-Symbol in der linken Leiste anklicken. Tippst du im Chatfenster <code>/</code>, erscheint eine lange Liste: eingebaute Befehle und dazwischen die Skills aus dem Kit. Einfach weitertippen, die Liste filtert sich. Im Gespräch eingeben:</p>
         <div class="code"><span class="wo">Claude Code</span><button class="kopieren" type="button">Kopieren</button><pre><code>/onboard</code></pre></div>
         <p>Sieben Fragen: wer du bist, was du anbietest, was dieses Quartal zählt, wo Geld, Mails und Dokumente liegen, was die Woche frisst. Bei der zweiten Frage die beiden vorbereiteten Texte einfügen. Am Ende schreibt der Assistent seine Dateien und schlägt die erste Frage vor: <em>„Worauf soll ich mich diese Woche konzentrieren?“</em></p>
         <p>Direkt danach, zwei Minuten: vier Fragen dazu, wie vertraut du mit Computer und KI bist. Daraus legt der Assistent fest, wie viel er erklärt und welche Wörter er voraussetzt. Keine Prüfung, jederzeit änderbar, und er stellt sich im Alltag von selbst nach.</p>
@@ -460,7 +460,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
       <li class="schritt">
         <h3>Das Tagesritual einrichten</h3>
-        <span class="dauer">15 Minuten</span>
+        <span class="dauer">10 Minuten</span>
         <p>Einmalig. Höchstens sieben Fragen: welche Bereiche, was abends erfasst wird, was morgens geprüft wird, welche Werkzeuge. Daraus entsteht die Datei, aus der Abend und Morgen alles Persönliche lesen.</p>
         <div class="code"><span class="wo">Claude Code</span><button class="kopieren" type="button">Kopieren</button><pre><code>/day-setup</code></pre></div>
         <p class="fertig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Fertig, wenn <code>references/tagesritual.md</code> existiert. Mittwochabend <code>/day-close</code>, Donnerstagfrüh <code>/day-open</code>. Ab da läuft es.</span></p>
@@ -516,11 +516,12 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
       <div class="karte"><strong>„claude“ wird nicht gefunden</strong><p>Das Terminal kennt den neuen Befehl erst nach einem Neustart. Terminalfenster schließen, neu öffnen, noch einmal versuchen. Hilft das nicht: Schritt 3 wiederholen.</p></div>
       <div class="karte nur-win"><strong>Claude Code meldet, Git Bash fehle</strong><p>Git for Windows ist nicht oder an einen ungewöhnlichen Ort installiert. Schritt 1 mit den Voreinstellungen wiederholen, dann Rechner neu starten.</p></div>
       <div class="karte nur-mac"><strong>Der Mac fragt nach „Befehlszeilenwerkzeugen“</strong><p>Das ist Schritt 1. Installation bestätigen, ein paar Minuten warten, dann weiter.</p></div>
-      <div class="karte"><strong>Die Anmeldung dreht sich im Kreis</strong><p>Im Browser muss dasselbe Konto angemeldet sein, auf dem dein Abo läuft. Anderes Konto abmelden, dann <code>claude</code> erneut starten.</p></div>
+      <div class="karte"><strong>Die Anmeldung dreht sich im Kreis</strong><p>Im Browser muss dasselbe Konto angemeldet sein, auf dem dein Abo läuft. Anderes Konto abmelden, dann in VS Code erneut auf <strong>Log in</strong> klicken.</p></div>
       <div class="karte"><strong>Der Assistent findet die Skills nicht</strong><p>Meist ist der falsche Ordner geöffnet. In VS Code muss der Ordner offen sein, in dem <code>CLAUDE.md</code> direkt liegt, nicht der Ordner darüber.</p></div>
       <div class="karte"><strong>Es fragt nach Erlaubnis</strong><p>Dateien in deinem AIOS-Ordner schreibt es ohne Rückfrage. Alles andere, Terminal, Mail, Kalender, fragt es vorher. Am ersten Tag bleibt das so; was dauerhaft erlaubt sein darf, legen wir am Tag 7 fest.</p></div>
       <div class="karte"><strong>Was hat es gerade gemacht?</strong><p>Im Verlauf links steht jeder Schritt als Zeile; aufgeklappt siehst du, welche Datei gelesen oder geändert wurde. Jede Datei lässt sich in VS Code per Rechtsklick → „Timeline“ auf einen früheren Stand zurückholen.</p></div>
       <div class="karte"><strong>Anhalten</strong><p>Stopp-Knopf im Eingabefeld oder die Esc-Taste. Fertige Dateien bleiben, der angefangene Schritt bricht ab. Nach außen geht nie etwas, ohne dass du es vorher im Chat gesehen und Ja gesagt hast.</p></div>
+      <div class="karte"><strong>Es meldet, das Kontingent sei aufgebraucht</strong><p>Dein Abo hat ein Zeitfenster von fünf Stunden mit begrenztem Umfang, dazu ein Wochenlimit. Voreingestellt ist das größte Modell; es denkt am besten, verbraucht aber am schnellsten. Kommt die Meldung, hilft nur warten, sie nennt die Uhrzeit. Vorbeugen: <code>/model</code> eingeben und das kleinere Modell wählen; für Tagesritual und Belegablage reicht es, und das Kontingent hält deutlich länger.</p></div>
       <div class="karte"><strong>Der Scanner findet den Rechner nicht</strong><p>Drucker und Rechner müssen im selben WLAN sein. Klappt es nicht in zehn Minuten, scannen wir am Tag mit dem Handy und richten den Drucker beim zweiten Termin ein.</p></div>
     </div>
   </div>

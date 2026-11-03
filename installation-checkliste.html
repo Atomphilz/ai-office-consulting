@@ -94,25 +94,25 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
     <colgroup><col style="width:14pt"><col style="width:50mm"><col><col style="width:46mm"><col style="width:22pt"></colgroup>
     <thead><tr><th></th><th>Schritt</th><th>Wo und wie</th><th>Fertig, wenn</th><th>Ok</th></tr></thead>
     <tbody>
-      <tr><td class="n">1</td><td class="was"><strong>Git installieren</strong><small>5 Min. Bringt unter Windows „Git Bash“ mit.</small></td>
+      <tr><td class="n">1</td><td class="was"><strong>Git installieren</strong><small>10 Min. Bringt unter Windows „Git Bash“ mit.</small></td>
           <td class="wie"><span class="os"><span class="wo">Windows</span><code>git-scm.com/download/win</code>, Voreinstellungen lassen</span><span class="os"><span class="wo">Mac</span><code>xcode-select --install</code></span></td>
           <td class="wann"><code>git --version</code> zeigt im Terminal eine Versionsnummer.</td><td class="ok"><span class="box"></span></td></tr>
-      <tr><td class="n">2</td><td class="was"><strong>VS Code installieren</strong><small>5 Min. Das Arbeitsfenster.</small></td>
+      <tr><td class="n">2</td><td class="was"><strong>VS Code installieren</strong><small>10 Min. Das Arbeitsfenster.</small></td>
           <td class="wie"><code>code.visualstudio.com</code>, Installer starten, Voreinstellungen lassen</td>
           <td class="wann">VS Code startet.</td><td class="ok"><span class="box"></span></td></tr>
-      <tr><td class="n">3</td><td class="was"><strong>Claude Code installieren</strong><small>5 Min. Danach in VS Code die Erweiterung „Claude Code“ installieren.</small></td>
+      <tr><td class="n">3</td><td class="was"><strong>Claude Code installieren</strong><small>10 Min. Danach in VS Code die Erweiterung „Claude Code“ installieren.</small></td>
           <td class="wie"><span class="os"><span class="wo">PowerShell</span><code>irm https://claude.ai/install.ps1 | iex</code></span><span class="os"><span class="wo">Mac, Terminal</span><code>curl -fsSL https://claude.ai/install.sh | bash</code></span></td>
           <td class="wann">Ein <strong>neues</strong> Terminal zeigt auf <code>claude --version</code> eine Versionsnummer.</td><td class="ok"><span class="box"></span></td></tr>
-      <tr><td class="n">4</td><td class="was"><strong>Anmelden</strong><small>3 Min. Browser öffnet sich, mit dem Claude-Konto bestätigen.</small></td>
-          <td class="wie"><span class="wo">Terminal</span><code>claude</code></td>
-          <td class="wann">Claude antwortet auf „Hallo“. Raus mit <code>/exit</code>.</td><td class="ok"><span class="box"></span></td></tr>
+      <tr><td class="n">4</td><td class="was"><strong>Anmelden</strong><small>10 Min. Claude-Symbol links in VS Code, „Log in“, Browser öffnet sich, mit dem Claude-Konto bestätigen.</small></td>
+          <td class="wie">VS Code: Claude-Symbol links → <strong>Log in</strong>. Nichts passiert? Der Browser mit der Anmeldung liegt oft hinter VS Code, Taskleiste.</td>
+          <td class="wann">Claude antwortet im Chatfenster auf „Hallo“.</td><td class="ok"><span class="box"></span></td></tr>
       <tr><td class="n">5</td><td class="was"><strong>Das Kit laden</strong><small>5 Min. ZIP entpacken, Ordner umbenennen in <code>aiOS</code>, nach <code>Dokumente</code>.</small></td>
           <td class="wie"><code>github.com/Atomphilz/aios-kit</code>, grüner Knopf <strong>Code</strong>, <strong>Download ZIP</strong></td>
           <td class="wann">Im Ordner <code>aiOS</code> liegt direkt die Datei <code>CLAUDE.md</code>.</td><td class="ok"><span class="box"></span></td></tr>
-      <tr><td class="n">6</td><td class="was"><strong>Ordner öffnen, <code>/onboard</code></strong><small>20 Min. Sieben Fragen, bei der zweiten die beiden Texte einfügen. Danach <code>/einstufung</code>, vier Fragen.</small></td>
-          <td class="wie">VS Code: <strong>Datei → Ordner öffnen</strong> → <code>aiOS</code>, Autoren vertrauen, Claude-Symbol links, dann <code>/onboard</code>, danach <code>/einstufung</code></td>
+      <tr><td class="n">6</td><td class="was"><strong>Ordner öffnen, <code>/onboard</code></strong><small>25 Min. Sieben Fragen, bei der zweiten die beiden Texte einfügen. Danach <code>/einstufung</code>, vier Fragen.</small></td>
+          <td class="wie">VS Code: <strong>File → Open Folder</strong> → <code>aiOS</code>, „Yes, I trust the authors“, Claude-Symbol links, dann <code>/onboard</code> (die Liste nach <code>/</code> ist lang, weitertippen), danach <code>/einstufung</code></td>
           <td class="wann">Im Ordner <code>context</code> liegen drei Dateien; <code>references/sprache.md</code> existiert.</td><td class="ok"><span class="box"></span></td></tr>
-      <tr><td class="n">7</td><td class="was"><strong>Tagesritual einrichten</strong><small>15 Min. Einmalig, höchstens sieben Fragen.</small></td>
+      <tr><td class="n">7</td><td class="was"><strong>Tagesritual einrichten</strong><small>10 Min. Einmalig, höchstens sieben Fragen.</small></td>
           <td class="wie"><span class="wo">Claude Code</span><code>/day-setup</code></td>
           <td class="wann"><code>references/tagesritual.md</code> existiert.</td><td class="ok"><span class="box"></span></td></tr>
     </tbody>
