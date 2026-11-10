@@ -172,6 +172,41 @@ a:hover { text-decoration-thickness: 2px; }
 .stufe-gelb { --stufe: var(--gelb); }
 .stufe-rot { --stufe: var(--rot); }
 
+/* ---------- Kostprobe (Level-up #18, 10.11.2026, Fassung 2: Aufgaben abgeben) ---------- */
+.kostprobe .chips { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.chip {
+  width: 100%; text-align: left; font: inherit; font-size: 0.98rem; line-height: 1.35; color: var(--text);
+  background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 10px; padding: 12px 14px 12px 40px;
+  position: relative; cursor: pointer; min-height: 48px; transition: border-color .15s ease, background .15s ease;
+}
+.chip::before { content: ""; position: absolute; left: 14px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border: 1.5px solid var(--rule-strong); border-radius: 5px; background: var(--bg); }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { border-color: var(--accent); background: var(--surface-2); }
+.chip[aria-pressed="true"]::before { background: var(--accent); border-color: var(--accent); }
+.chip[aria-pressed="true"]::after { content: ""; position: absolute; left: 19.5px; top: 50%; width: 4px; height: 8px; margin-top: -6px; border: solid var(--accent-ink); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.chip[disabled] { opacity: .45; cursor: not-allowed; }
+.chip[disabled]:hover { border-color: var(--rule-strong); }
+.kostprobe .zaehler { color: var(--muted); margin: 14px 0 0; font-size: 0.97rem; min-height: 1.5em; }
+.kostprobe .zaehler a { color: var(--muted); }
+.kostprobe .ergebnis { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.kostprobe .ergebnis[hidden] { display: none; }
+.kostprobe .ergebnis:focus { outline: none; }
+.kostprobe .ergebnis h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: .25rem; }
+.kostprobe .ergebnis .karten { margin-top: 1rem; }
+.kostprobe .etikett { display: inline-flex; align-items: center; font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+.kostprobe .etikett .punkt { width: 9px; height: 9px; margin-right: 7px; vertical-align: 0; }
+.kostprobe .ergebnis .karte .aufgabe { display: block; color: var(--text); font-weight: 600; font-size: 1.02rem; line-height: 1.35; margin-bottom: 8px; }
+.kostprobe .fazit { margin-top: 1.25rem; }
+.kostprobe .fazit p { margin: 0 0 .5rem; }
+.kostprobe .fazit .satz { font-size: 1.1rem; font-weight: 600; }
+.kostprobe .nachsatz { color: var(--muted); font-size: 0.97rem; }
+.kostprobe .ergebnis .cta-reihe { margin-top: 1.25rem; }
+.kostprobe .hinweis-js { color: var(--muted); }
+@media (max-width: 860px) { .kostprobe .chips { grid-template-columns: 1fr 1fr; } .kostprobe .ergebnis .karten { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .kostprobe .chips { grid-template-columns: 1fr; } .kostprobe .ergebnis .karten { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .chip { transition: none; } }
+@media print { .kostprobe { display: none; } }
+
 /* ---------- Ablauf ---------- */
 .schritte { list-style: none; margin: 0; padding: 0; counter-reset: schritt; display: grid; gap: 14px; }
 .schritte li {
@@ -333,7 +368,7 @@ a:hover { text-decoration-thickness: 2px; }
     <h2>Was ich mache</h2>
     <div class="prose">
       <p>Ich richte auf Ihrem eigenen Rechner ein System ein, das Ihre Mail, Ihren Kalender, Ihre Dateien und Ihre Arbeitsweise kennt: ein Second Brain für Ihr Büro. Damit baue ich die Abläufe nach, die Sie jede Woche Stunden kosten: Exporte zusammenziehen, Termine abstimmen, den Posteingang vorsortieren, Schreiben vorbereiten. Nichts davon läuft über eine fremde Plattform.</p>
-      <p>Was Sie schon haben, bleibt. Fachsoftware, Buchhaltung, Mailprogramm und Kalender werden angebunden, nicht ersetzt. Ihre Fachsoftware bleibt das System, in dem die Wahrheit steht; der Assistent arbeitet daneben und zu.</p>
+      <p>Was Sie schon haben, bleibt. Fachsoftware, Buchhaltung, Mailprogramm und Kalender werden angebunden, nicht ersetzt. Ihre Fachsoftware bleibt der Ort, an dem Ihre Daten liegen; der Assistent arbeitet daneben und zu.</p>
       <div class="callout"><p>Nach 90 Tagen laufen drei Abläufe von allein, und Sie haben einen Plan für die nächsten drei, die Sie auch ohne mich umsetzen können.</p></div>
     </div>
   </div>
@@ -349,6 +384,47 @@ a:hover { text-decoration-thickness: 2px; }
       <div class="karte stufe stufe-rot"><strong><span class="punkt" aria-hidden="true"></span>Rot:</strong><p>Abläufe mit Mandanten-, Patienten- oder Mieterdaten, die in einem KI-Dienst nichts verloren haben und bei Ihnen bleiben.</p></div>
     </div>
     <p class="prose">So behalten Sie bei jedem Ablauf den Überblick, was der Assistent tut, was er nur mit Umweg tut und was er nicht tut, und Sie können das jedem Mandanten, Patienten oder Mieter in einem Satz erklären. Die Einstufung bekommen Sie schriftlich; sie wächst mit jedem neuen Ablauf mit.</p>
+  </div>
+</section>
+
+<!--
+  Kostprobe: Aufgaben abgeben. Bis zu fünf Aufgaben wählen, je Aufgabe ein Nutzen-Satz, die Datenstufe nur als Etikett.
+  Rein im Browser, ohne Speicherung und ohne Server.
+  bike-method-phase: 1  (Philipp spielt sie selbst durch, bevor sie live geht.)
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk.  Level-up #18, 10. Nov 2026, Fassung 2.
+-->
+<section class="abschnitt kostprobe" id="kostprobe">
+  <div class="wrap">
+    <h2>Welche Aufgaben würden Sie gerne abgeben?</h2>
+    <p class="prose">Wählen Sie bis zu fünf aus Ihrem Büroalltag. Sie sehen sofort, was der Assistent übernimmt und was für Sie übrig bleibt. Alles hier in Ihrem Browser, nichts wird gespeichert oder gesendet.</p>
+    <noscript><p class="hinweis-js">Die Kostprobe braucht JavaScript. Die drei Stufen oben gelten auch ohne.</p></noscript>
+    <ul class="chips" id="kostprobe-chips" aria-label="Büroaufgaben, bis zu fünf auswählen">
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gruen" data-satz="Der Assistent benennt jeden Beleg, legt ihn in den richtigen Ordner und stellt den Monatsordner für den Steuerberater zusammen. Für Sie bleibt: ein Blick drüber.">Eingangsrechnungen und Belege ablegen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent füllt die Vorlage, zieht die nächste Nummer und legt die Rechnung ab. Für Sie bleibt: Name eintragen und abschicken.">Rechnungen an Kunden, Klienten, Mandanten</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="rot" data-satz="Die Akte bleibt in Ihrer Software, der Assistent sieht sie nie, auch nicht „anonymisiert“. Dafür nimmt er Ihnen ab, was daneben liegt: Vorlagen, Formulare, Fachtexte ohne Fallbezug.">Mandanten-, Patienten- oder Klientenakte, Sitzungsnotizen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gruen" data-satz="Der Assistent schreibt den Entwurf in Ihrem Ton, aus Ihren Stichpunkten. Für Sie bleibt: lesen und abschicken.">Texte für Website, Aushang, Newsletter</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent formuliert Zusagen, Absagen und Verschiebungen als fertige Bausteine ohne Namen. Für Sie bleibt: Name einsetzen und senden.">Termine koordinieren, Absagen, Verschiebungen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="rot" data-satz="Die Liste bleibt in Ihrer Datei, der Assistent bekommt sie nicht. Er baut Ihnen dafür die Liste selbst: Spalten, Prüfregeln, Serienbrief-Vorlage, ohne einen einzigen Namen.">Teilnehmer- und Mitgliederlisten mit Kontakt- oder Gesundheitsangaben</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gruen" data-satz="Der Assistent schreibt und pflegt Ihre Vorlagen und setzt aus Stichpunkten ein fertiges Angebot auf. Für Sie bleibt: Preis prüfen und freigeben.">Angebote, Vorlagen, Leistungsbeschreibungen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent rechnet mit „Wohnung 1, 2, 3“ oder Projektnummern und baut die Abrechnung samt Erklärtext. Für Sie bleibt: Namen zuordnen und versenden.">Nebenkosten- oder Projektabrechnung</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="rot" data-satz="Akten und Verträge bleiben in Ihrem Ordner, ohne Assistent. Er liefert das Gerüst dazu: Vorlagen je Mahnstufe, Fristenplan, Checkliste je Vorgang, ohne Namen und Beträge.">Verträge, Mieterakten, Mahnverfahren</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gruen" data-satz="Aus Ihren Stichpunkten macht der Assistent den fertigen Entwurf im richtigen Format. Für Sie bleibt: einmal lesen und freigeben.">Protokolle, Anträge, Einladungen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent arbeitet mit Summen oder einem Export ohne Verwendungszweck und liefert Monatsübersicht und Auffälligkeiten. Für Sie bleibt: der Export, ein Klick.">Kontoauszüge auswerten</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="rot" data-satz="Der Brief an die einzelne Person entsteht weiter in Ihrer Fachsoftware, dort liegen die Daten. Der Assistent liefert die Bausteine dahinter: Textvorlagen je Anlass, die Sie nur noch befüllen.">Schriftverkehr mit einzelnen Mandanten, Patienten, Versicherten</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gruen" data-satz="Der Assistent recherchiert und schreibt den Entwurf. Für Sie bleibt: die Fachlichkeit prüfen.">Fachtexte und Infoblätter ohne Fallbezug</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent hält Vorlagen je Stufe bereit, freundlich bis bestimmt, mit Platzhaltern. Für Sie bleibt: Name und Betrag einsetzen und senden.">Zahlungserinnerungen</button></li>
+      <li><button type="button" class="chip" aria-pressed="false" data-stufe="gelb" data-satz="Der Assistent sortiert einzelne Ordner vor, etwa Rechnungen oder Newsletter, nie den ganzen Eingang. Für Sie bleibt: der Rest, deutlich kürzer.">Posteingang vorsortieren</button></li>
+    </ul>
+    <p class="zaehler" id="kostprobe-zaehler" aria-live="polite">Noch keine gewählt. Bis zu fünf Aufgaben, das Ergebnis erscheint darunter.</p>
+    <div class="ergebnis" id="kostprobe-ergebnis" hidden tabindex="-1">
+      <h3>Was der Assistent übernimmt, und was bei Ihnen bleibt</h3>
+      <div class="karten" id="kostprobe-karten"></div>
+      <div class="fazit"><p class="satz" id="kostprobe-fazit"></p><p class="nachsatz">Für Ihre echten Abläufe gibt es das am Tag bei Ihnen schriftlich, Aufgabe für Aufgabe.</p></div>
+      <div class="cta-reihe">
+        <a class="btn btn-primary" id="kostprobe-mail" href="mailto:philipp.konrad@gmail.com?subject=Kostprobe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="kostprobe-mail-text">Diese Aufgaben per E-Mail besprechen</span></a>
+        <button type="button" class="btn btn-secondary" id="kostprobe-neu">Neu wählen</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -414,5 +490,79 @@ a:hover { text-decoration-thickness: 2px; }
     <span><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
+<script>
+(function () {
+  var MAX = 5;
+  var chips = Array.prototype.slice.call(document.querySelectorAll('#kostprobe-chips .chip'));
+  if (!chips.length) return;
+  var zaehler = document.getElementById('kostprobe-zaehler');
+  var ergebnis = document.getElementById('kostprobe-ergebnis');
+  var karten = document.getElementById('kostprobe-karten');
+  var fazit = document.getElementById('kostprobe-fazit');
+  var mail = document.getElementById('kostprobe-mail');
+  var mailText = document.getElementById('kostprobe-mail-text');
+  var neu = document.getElementById('kostprobe-neu');
+  var ETIKETT = { gruen: 'läuft sofort', gelb: 'mit Umweg', rot: 'bleibt bei Ihnen' };
+  var WORT = ['keine', 'eine', 'zwei', 'drei', 'vier', 'fünf'];
+  function gross(w) { return w.charAt(0).toUpperCase() + w.slice(1); }
+  function gewaehlt() { return chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; }); }
+  function zeige() {
+    var g = gewaehlt(), n = g.length;
+    chips.forEach(function (c) { c.disabled = (n >= MAX && c.getAttribute('aria-pressed') !== 'true'); });
+    if (n === 0) {
+      zaehler.textContent = 'Noch keine gewählt. Bis zu fünf Aufgaben, das Ergebnis erscheint darunter.';
+      ergebnis.hidden = true; karten.innerHTML = ''; return;
+    }
+    zaehler.innerHTML = '';
+    zaehler.appendChild(document.createTextNode(n < MAX ? n + ' von ' + MAX + ' gewählt. ' : 'Fünf gewählt, mehr geht in der Kostprobe nicht. Am Tag bei Ihnen schon. '));
+    var zu = document.createElement('a'); zu.href = '#kostprobe-ergebnis'; zu.textContent = 'Zum Ergebnis';
+    zaehler.appendChild(zu);
+    karten.innerHTML = '';
+    var frei = 0, bleibt = 0, zeilen = [];
+    g.forEach(function (c) {
+      var st = c.getAttribute('data-stufe');
+      if (st === 'rot') bleibt++; else frei++;
+      var k = document.createElement('div');
+      k.className = 'karte stufe stufe-' + st;
+      var e = document.createElement('span'); e.className = 'etikett';
+      var p0 = document.createElement('span'); p0.className = 'punkt'; p0.setAttribute('aria-hidden', 'true');
+      e.appendChild(p0); e.appendChild(document.createTextNode(ETIKETT[st]));
+      var nm = document.createElement('strong'); nm.className = 'aufgabe'; nm.textContent = c.textContent;
+      var p = document.createElement('p'); p.textContent = c.getAttribute('data-satz');
+      k.appendChild(e); k.appendChild(nm); k.appendChild(p);
+      karten.appendChild(k);
+      zeilen.push('- ' + c.textContent + ' (' + ETIKETT[st] + ')');
+    });
+    var satz;
+    if (bleibt === 0) {
+      satz = frei === 1 ? 'Eine Aufgabe, die ab Tag eins nicht mehr auf Ihrem Tisch liegt.' : gross(WORT[frei]) + ' Aufgaben, die ab Tag eins nicht mehr auf Ihrem Tisch liegen.';
+    } else if (frei === 0) {
+      satz = (bleibt === 1 ? 'Diese Aufgabe bleibt bei Ihnen, der Assistent nimmt Ihnen das Drumherum ab.' : 'Diese Aufgaben bleiben bei Ihnen, der Assistent nimmt Ihnen das Drumherum ab.') + ' Ob sich ein Tag dafür lohnt, sage ich Ihnen im Gespräch ehrlich.';
+    } else {
+      satz = (frei === 1 ? 'Eine Aufgabe, die ab Tag eins nicht mehr auf Ihrem Tisch liegt.' : gross(WORT[frei]) + ' Aufgaben, die ab Tag eins nicht mehr auf Ihrem Tisch liegen.')
+        + (bleibt === 1 ? ' Eine bleibt bei Ihnen, mit weniger Drumherum.' : ' ' + gross(WORT[bleibt]) + ' bleiben bei Ihnen, mit weniger Drumherum.');
+    }
+    fazit.textContent = satz;
+    mailText.textContent = n === 1 ? 'Diese Aufgabe per E-Mail besprechen' : 'Diese Aufgaben per E-Mail besprechen';
+    var betreff = 'Kostprobe: ' + (n === 1 ? 'eine Aufgabe' : WORT[n] + ' Aufgaben') + ' abgeben';
+    var text = 'Guten Tag Herr Konrad,\n\ndiese Aufgaben würde ich gerne abgeben:\n' + zeilen.join('\n') + '\n\nMeine Woche in zwei Zeilen:\n\n';
+    mail.href = 'mailto:philipp.konrad@gmail.com?subject=' + encodeURIComponent(betreff) + '&body=' + encodeURIComponent(text);
+    ergebnis.hidden = false;
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      zeige();
+    });
+  });
+  neu.addEventListener('click', function () {
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); c.disabled = false; });
+    zeige();
+    chips[0].focus();
+    document.getElementById('kostprobe').scrollIntoView({ block: 'start' });
+  });
+})();
+</script>
+
 </body>
 </html>
