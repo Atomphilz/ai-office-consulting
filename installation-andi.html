@@ -317,6 +317,17 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 @media print { .kopf, .os-wahl, .kopieren, .fuss { display: none; } body { background: #fff; color: #111; } .schritt, .karte, .pruef li { break-inside: avoid; box-shadow: none; } }
 
 /* Andi */
+.vergleich { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.vergleich .karte { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 20px 22px; }
+.vergleich .karte.akzent { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-soft), var(--surface)); }
+.vergleich .ikon { width: 44px; height: 30px; color: var(--muted); display: block; margin-bottom: 10px; }
+.vergleich .karte.akzent .ikon { color: var(--accent); }
+.vergleich .wann { color: var(--muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; display: block; margin-bottom: 6px; }
+.vergleich .karte.akzent .wann { color: var(--accent); }
+.vergleich strong { display: block; font-size: 1.1rem; margin-bottom: 10px; }
+.vergleich ul { margin: 0; padding-left: 1.1rem; color: var(--muted); line-height: 1.55; }
+.vergleich li { margin-bottom: 6px; }
+#vergleich .callout { margin-top: 1.25rem; }
 #einsatz .hilfe + .prose { margin-top: 1.25rem; }
 .pruef li span.box-fertig { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; }
 .pruef li span.box-fertig svg { width: 14px; height: 14px; }
@@ -339,6 +350,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
     <nav class="nav" aria-label="Abschnitte">
       <a href="#vorher">Vorher</a>
       <a href="#einsatz">Einsatzkarte</a>
+      <a href="#vergleich">Cowork?</a>
       <a href="#schritte">Schritte</a>
       <a href="#skills">Skills</a>
       <a href="#links">Links</a>
@@ -372,12 +384,13 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 <section class="abschnitt" id="vorher">
   <div class="wrap">
     <h2><span class="nr">01</span>Heute bereitlegen</h2>
-    <p class="prose">Sechs Dinge, die auf dem Tisch liegen, bevor wir loslegen. Jedes spart eine halbe Stunde Warten oder Suchen.</p>
+    <p class="prose">Sieben Dinge, die auf dem Tisch liegen, bevor wir loslegen. Jedes spart eine halbe Stunde Warten oder Suchen. Das erste ist schon erledigt.</p>
     <ul class="pruef">
-      <li><span class="box" aria-hidden="true"></span><div><strong>Claude-Abo</strong><small>Pro reicht für den Anfang, Max ist bequemer. Falls du noch keins hast, buchen wir es am Anfang zusammen auf <a href="https://claude.ai/">claude.ai</a>; es läuft auf deiner E-Mail-Adresse und deiner Zahlung. Das Einloggen in Claude Code zeige ich dir in Schritt 4.</small></div></li>
+      <li><span class="box box-fertig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></span><div><strong>Claude-Abo</strong><small>Hast du, Max. Leg nur E-Mail-Adresse und Passwort bereit, mit denen es läuft. Das Einloggen in Claude Code zeige ich dir in Schritt 4.</small></div></li>
       <li><span class="box" aria-hidden="true"></span><div><strong>Dein Mac-Passwort</strong><small>In Schritt 1 und 3 fragt der Mac einmal nach deinem Anmeldepasswort. Du tippst es selbst ein, ich sehe es nicht.</small></div></li>
       <li><span class="box" aria-hidden="true"></span><div><strong>Zwei eigene Texte</strong><small>Eine E-Mail und eine Nachricht, die du kürzlich geschrieben hast. Unverändert. Der Assistent lernt daraus deinen Ton.</small></div></li>
-      <li><span class="box" aria-hidden="true"></span><div><strong>Deine letzte normale Woche</strong><small>Fünf bis zehn Dinge, die du letzte Woche am Schreibtisch gemacht hast und die nichts mit den Häusern selbst zu tun hatten. Stichworte reichen. Daraus wird die Prozessliste, und aus der Liste die Einsatzkarte unten.</small></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Die Liste vom Unternehmensberater</strong><small>Die Prozesse, die ihr zum Optimieren vorgesehen habt. Sie ist deine Prozessliste, auch wenn KI dabei kein Thema war: Jeder Punkt bekommt auf der Einsatzkarte eine Farbe, und die grünen sind die Kandidaten für den ersten Skill.</small></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Deine letzte normale Woche</strong><small>Fünf bis zehn Dinge, die du letzte Woche am Schreibtisch gemacht hast und die nichts mit den Häusern selbst zu tun hatten. Stichworte reichen. Das fängt ein, was auf der Liste fehlt.</small></div></li>
       <li><span class="box" aria-hidden="true"></span><div><strong>Welche Programme</strong><small>Verwaltungssoftware, Mailprogramm, wo deine Dokumente liegen. Der Assistent fragt das in <code>/onboard</code> ab; hast du es parat, geht die Runde schneller.</small></div></li>
       <li><span class="box" aria-hidden="true"></span><div><strong>Ein Beispielvorgang, geschwärzt</strong><small>Eine typische Kette aus dem Alltag, etwa ein Handwerkerauftrag von der Meldung bis zur Rechnung, Namen und Adressen geschwärzt. Zehn Beispiele sagen mehr als eine Beschreibung.</small></div></li>
     </ul>
@@ -397,9 +410,35 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
   </div>
 </section>
 
+<section class="abschnitt" id="vergleich">
+  <div class="wrap">
+    <h2><span class="nr">03</span>Cowork oder Claude Code?</h2>
+    <p class="prose">Du kennst Claude aus der App. Dasselbe Modell, dasselbe Abo, dieselben Dateien. Der Unterschied liegt nicht in der Intelligenz, sondern darin, was zwischen zwei Gesprächen übrig bleibt.</p>
+    <div class="vergleich">
+      <div class="karte"><svg class="ikon" viewBox="0 0 48 32" aria-hidden="true"><path d="M6 2h30a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H16l-9 8v-8H6a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="wann">Cowork, die Claude-App</span><strong>Die einzelne Aufgabe</strong>
+        <ul>
+          <li>Du startest jede Aufgabe und sagst, was gilt.</li>
+          <li>Arbeitet im Ordner, den du ihm gerade gibst.</li>
+          <li>Anweisungen hinterlegst du je Projekt, von Hand.</li>
+          <li>Stark für ein Dokument, eine Recherche, eine Tabelle.</li>
+        </ul>
+      </div>
+      <div class="karte akzent"><svg class="ikon" viewBox="0 0 48 32" aria-hidden="true"><path d="M2 7h14l5-6h20a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 18h18m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wann">Claude Code, dein aiOS</span><strong>Der wiederkehrende Ablauf</strong>
+        <ul>
+          <li>Ein Befehl wie <code>/day-close</code> startet einen festen Ablauf, jedes Mal gleich.</li>
+          <li>Das Gedächtnis liegt als Dateien im Ordner und wächst mit jedem Tag.</li>
+          <li>Skripte und Zeitpläne laufen auch, wenn du nicht am Rechner sitzt.</li>
+          <li>Jede Änderung ist nachlesbar und zurückholbar.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout prose"><p>Beides bleibt. Cowork für das, was einmal vorkommt. Das aiOS für das, was jede Woche wiederkommt: Es merkt sich, wie du es haben willst, und fängt nicht bei null an.</p></div>
+  </div>
+</section>
+
 <section class="abschnitt seite2" id="schritte">
   <div class="wrap">
-    <h2><span class="nr">03</span>Die sieben Schritte</h2>
+    <h2><span class="nr">04</span>Die sieben Schritte</h2>
     <p class="prose">In dieser Reihenfolge. Jeder Schritt endet mit einer Prüfung, an der du siehst, dass er geklappt hat.</p>
     <p class="prose">Du musst vorher keinen Ordner anlegen. Die Programme aus den Schritten 1 bis 3 installieren sich an ihren Standardort; dein AIOS-Ordner <code>Dokumente/aiOS</code> entsteht in Schritt 5 beim Entpacken des Kits.</p>
     <ol class="schritte">
@@ -474,7 +513,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
 <section class="abschnitt" id="skills">
   <div class="wrap">
-    <h2><span class="nr">04</span>Die Skills</h2>
+    <h2><span class="nr">05</span>Die Skills</h2>
     <p class="prose">Ein Skill ist ein Befehl mit Schrägstrich, der einen festen Ablauf startet. Diese stehen von Anfang an bereit; einen bauen wir für dich.</p>
     <div class="skills">
       <div class="karte"><code>/onboard</code><span class="wann">Tag 1</span><p>Sieben Fragen, dann kennt der Assistent Person, Geschäft, Prioritäten und Ton.</p></div>
@@ -494,7 +533,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
 <section class="abschnitt seite2" id="links">
   <div class="wrap">
-    <h2><span class="nr">05</span>Alle Links</h2>
+    <h2><span class="nr">06</span>Alle Links</h2>
     <div class="links">
       <a class="karte" href="https://claude.ai/" target="_blank" rel="noopener"><strong>Claude-Konto und Abo</strong><span>Anmelden, Abo prüfen.</span><small>claude.ai</small></a>
       <a class="karte nur-mac" href="https://support.apple.com/de-de/guide/terminal/welcome/mac" target="_blank" rel="noopener"><strong>Terminal am Mac</strong><span>Apples Anleitung zum Terminal. Schritt 1 und 3.</span><small>support.apple.com</small></a>
@@ -511,7 +550,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
 <section class="abschnitt" id="hilfe">
   <div class="wrap">
-    <h2><span class="nr">06</span>Wenn etwas hakt</h2>
+    <h2><span class="nr">07</span>Wenn etwas hakt</h2>
     <div class="hilfe">
       <div class="karte"><strong>„claude“ wird nicht gefunden</strong><p>Das Terminal kennt den neuen Befehl erst nach einem Neustart. Terminalfenster schließen, neu öffnen, noch einmal versuchen. Hilft das nicht: Schritt 3 wiederholen.</p></div>
       <div class="karte nur-win"><strong>Claude Code meldet, Git Bash fehle</strong><p>Git for Windows ist nicht oder an einen ungewöhnlichen Ort installiert. Schritt 1 mit den Voreinstellungen wiederholen, dann Rechner neu starten.</p></div>
@@ -530,7 +569,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation M
 
 <section class="abschnitt seite2" id="danach">
   <div class="wrap">
-    <h2><span class="nr">07</span>Und danach</h2>
+    <h2><span class="nr">08</span>Und danach</h2>
     <ol class="zeit">
       <li data-wann="Jeden Tag"><strong>Das Ritual</strong><p>Abends <code>/day-close</code>, morgens <code>/day-open</code>. Fünf Minuten plus eine. Ausgelassene Tage werden nicht gezählt, die Kette setzt sich einfach fort.</p></li>
       <li data-wann="Tag 7"><strong>Erste Prüfung</strong><p><code>/audit</code> zeigt, was der Assistent kennt, was er erreicht und was fehlt. Den Bericht besprechen wir im zweiten Termin, zusammen mit dem, was heute liegen bleibt.</p></li>
